@@ -33,10 +33,16 @@ class TelegramBotController extends Controller
 
         if (isset($updates['message'])) {
             $text_pesan = $updates['message']['text'];
+            if ($text_pesan=="halo") {
+                $balasan = "opo seeehhh";
+            }
+            else{
+                $balasan = "rame aee";
+            }
             $chat_id_pesan  =$updates['message']['from']['id'];
             $telegram->sendMessage([
                 'chat_id' => $chat_id_pesan,
-                'text' => 'ini pesan dari basukarno'
+                'text' => $balasan
             ]);
 
         }
