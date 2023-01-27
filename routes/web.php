@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('messages', [App\Http\Controllers\TelegramBotController::class, 'messages'])->name('messages');
+
+Route::get('messages/{id}', [App\Http\Controllers\TelegramBotController::class, 'sendMessages'])->name('messages');
