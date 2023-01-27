@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('messages', [App\Http\Controllers\TelegramBotController::class, 'messages'])->name('messages');
+// Route::get('messages', [App\Http\Controllers\TelegramBotController::class, 'messages'])->name('messages');
 
-Route::get('messages/{id}', [App\Http\Controllers\TelegramBotController::class, 'sendMessages'])->name('messages');
+// Route::get('messages/{id}', [App\Http\Controllers\TelegramBotController::class, 'sendMessages'])->name('messages');
 
 Route::post('messages/webhook', [App\Http\Controllers\TelegramBotController::class, 'telegramWebhook'])->name('messages');
