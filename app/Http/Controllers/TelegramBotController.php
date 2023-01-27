@@ -28,13 +28,13 @@ class TelegramBotController extends Controller
 
     public function telegramWebhook()
     {
-        $this->telegram = new API(env('TELEGRAM_BOT_TOKEN'));
-        $updates = $this->telegram->getWebhookUpdates();
+        $telegram = new API(env('TELEGRAM_BOT_TOKEN'));
+        $updates = $telegram->getWebhookUpdates();
 
         if (isset($updates['message'])) {
             $text_pesan = $updates['messages']['text'];
             $chat_id_pesan  =$updates['messages']['from']['id'];
-            $this->telegram->sendMessage([
+            $telegram->sendMessage([
                 'chat_id' => $chat_id_pesan,
                 'text' => 'ini pesan dari basukarno'
             ]);
@@ -42,7 +42,7 @@ class TelegramBotController extends Controller
         }
         else
         {
-            $this->telegram->sendMessage([
+            $telegram->sendMessage([
                 'chat_id' => 5555459519,
                 'text' => 'kosong webhook'
             ]);
