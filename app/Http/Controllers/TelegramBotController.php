@@ -32,8 +32,8 @@ class TelegramBotController extends Controller
         $updates = $telegram->getWebhookUpdates();
 
         if (isset($updates['message'])) {
-            $text_pesan = $updates['messages']['text'];
-            $chat_id_pesan  =$updates['messages']['from']['id'];
+            $text_pesan = $updates['message']['text'];
+            $chat_id_pesan  =$updates['message']['from']['id'];
             $telegram->sendMessage([
                 'chat_id' => $chat_id_pesan,
                 'text' => 'ini pesan dari basukarno'
