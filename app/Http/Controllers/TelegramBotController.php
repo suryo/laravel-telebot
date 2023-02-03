@@ -37,7 +37,7 @@ class TelegramBotController extends Controller
                 $balasan = "opo seeehhh";
             }
             else
-            if ($text_pesan=="promo") {
+            if (($text_pesan=="promo")||($text_pesan=="Promo")) {
                 $balasan = "silahkan buka di https://www.supresso.com/sg/index.php";
             }
             else{
